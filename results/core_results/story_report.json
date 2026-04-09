@@ -1,0 +1,117 @@
+{
+  "action_clear_slots": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 19
+  },
+  "action_listen": {
+    "precision": 1.0,
+    "recall": 0.9365079365079365,
+    "f1-score": 0.9672131147540983,
+    "support": 63
+  },
+  "utter_goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "utter_human_handoff": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1
+  },
+  "action_restart": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_out_of_scope": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_offer_more_steps": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "utter_type_emergency": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 19
+  },
+  "utter_select_crisis_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "action_set_crisis_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 19
+  },
+  "crisis_form": {
+    "precision": 0.8461538461538461,
+    "recall": 1.0,
+    "f1-score": 0.9166666666666666,
+    "support": 22
+  },
+  "action_greet_and_restart": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_human_handover": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 2
+  },
+  "action_calculate_risk_level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "action_finish_and_guide": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "accuracy": 0.9715909090909091,
+  "macro avg": {
+    "precision": 0.9008547008547009,
+    "recall": 0.9291005291005291,
+    "f1-score": 0.9122586520947177,
+    "support": 176
+  },
+  "weighted avg": {
+    "precision": 0.9712995337995338,
+    "recall": 0.9715909090909091,
+    "f1-score": 0.9698925732737208,
+    "support": 176
+  },
+  "micro avg": {
+    "precision": 0.9715909090909091,
+    "recall": 0.9715909090909091,
+    "f1-score": 0.9715909090909091,
+    "support": 176
+  },
+  "conversation_accuracy": {
+    "accuracy": 0.7777777777777778,
+    "correct": 14,
+    "with_warnings": 0,
+    "total": 18
+  }
+}

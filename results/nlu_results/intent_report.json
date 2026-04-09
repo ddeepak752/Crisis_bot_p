@@ -1,0 +1,177 @@
+{
+  "request_human": {
+    "precision": 0.9285714285714286,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.896551724137931,
+    "support": 15,
+    "confused_with": {
+      "report_fire": 1,
+      "more_steps_no": 1
+    }
+  },
+  "provide_people_count": {
+    "precision": 0.9375,
+    "recall": 1.0,
+    "f1-score": 0.967741935483871,
+    "support": 15,
+    "confused_with": {}
+  },
+  "provide_injury_status": {
+    "precision": 0.6875,
+    "recall": 0.7333333333333333,
+    "f1-score": 0.7096774193548386,
+    "support": 15,
+    "confused_with": {
+      "goodbye": 1,
+      "greet": 1
+    }
+  },
+  "nlu_fallback": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 15,
+    "confused_with": {
+      "more_steps_yes": 3,
+      "provide_injury_status": 3,
+      "out_of_scope": 2
+    }
+  },
+  "provide_vulnerability": {
+    "precision": 0.8695652173913043,
+    "recall": 1.0,
+    "f1-score": 0.9302325581395349,
+    "support": 20,
+    "confused_with": {}
+  },
+  "more_steps_yes": {
+    "precision": 0.625,
+    "recall": 1.0,
+    "f1-score": 0.7692307692307693,
+    "support": 10,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 0.6666666666666666,
+    "recall": 0.8,
+    "f1-score": 0.7272727272727272,
+    "support": 10,
+    "confused_with": {
+      "emergency": 1,
+      "report_earthquake": 1
+    }
+  },
+  "report_fire": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 10,
+    "confused_with": {}
+  },
+  "provide_location": {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "f1-score": 0.9655172413793104,
+    "support": 30,
+    "confused_with": {
+      "goodbye": 1,
+      "report_flood": 1
+    }
+  },
+  "out_of_scope": {
+    "precision": 0.8666666666666667,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.8666666666666667,
+    "support": 15,
+    "confused_with": {
+      "emergency": 1,
+      "report_power_outage": 1
+    }
+  },
+  "report_earthquake": {
+    "precision": 0.9375,
+    "recall": 1.0,
+    "f1-score": 0.967741935483871,
+    "support": 15,
+    "confused_with": {}
+  },
+  "restart": {
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1-score": 0.9523809523809523,
+    "support": 10,
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 0.7,
+    "recall": 0.7,
+    "f1-score": 0.7,
+    "support": 10,
+    "confused_with": {
+      "greet": 2,
+      "more_steps_no": 1
+    }
+  },
+  "report_flood": {
+    "precision": 0.9375,
+    "recall": 1.0,
+    "f1-score": 0.967741935483871,
+    "support": 15,
+    "confused_with": {}
+  },
+  "more_steps_no": {
+    "precision": 0.6666666666666666,
+    "recall": 0.8,
+    "f1-score": 0.7272727272727272,
+    "support": 10,
+    "confused_with": {
+      "more_steps_yes": 2
+    }
+  },
+  "emergency": {
+    "precision": 0.8,
+    "recall": 0.8,
+    "f1-score": 0.8000000000000002,
+    "support": 10,
+    "confused_with": {
+      "more_steps_no": 1,
+      "more_steps_yes": 1
+    }
+  },
+  "report_power_outage": {
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1-score": 0.9523809523809523,
+    "support": 10,
+    "confused_with": {}
+  },
+  "provide_mobility_status": {
+    "precision": 0.9166666666666666,
+    "recall": 0.7333333333333333,
+    "f1-score": 0.8148148148148148,
+    "support": 15,
+    "confused_with": {
+      "provide_injury_status": 2,
+      "more_steps_no": 1
+    }
+  },
+  "accuracy": 0.848,
+  "macro avg": {
+    "precision": 0.7884065813413639,
+    "recall": 0.8462962962962962,
+    "f1-score": 0.8124619593652082,
+    "support": 250
+  },
+  "weighted avg": {
+    "precision": 0.8066734424995294,
+    "recall": 0.848,
+    "f1-score": 0.8232420210073933,
+    "support": 250
+  },
+  "micro avg": {
+    "precision": 0.848,
+    "recall": 0.848,
+    "f1-score": 0.848,
+    "support": 250
+  }
+}

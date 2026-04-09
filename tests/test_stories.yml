@@ -1,0 +1,406 @@
+version: "3.1"
+
+stories:
+# =====================================================
+# CRISIS RESPONSE CHATBOT - CORE DIALOGUE TESTS
+# For Assignment: Advanced Conversational UI Design
+# Testing: Story transitions, Edge cases, Fallbacks
+# =====================================================
+
+# -------------------------
+# MAIN FLOW TESTING - All 4 Crisis Types
+# -------------------------
+
+- story: complete earthquake flow
+  steps:
+    - intent: greet
+    - action: action_greet_and_restart
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_earthquake
+    - action: action_set_crisis_type
+    - slot_was_set:
+        - crisis_type: earthquake
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Berlin, Alexanderplatz"
+    - slot_was_set:
+        - people_count: "3"
+    - slot_was_set:
+        - vulnerability: "1 child"
+    - slot_was_set:
+        - mobility_status: "yes"
+    - slot_was_set:
+        - injury_status: "no"
+    - active_loop: null
+    - action: action_calculate_risk_level
+    - action: utter_offer_more_steps
+    - intent: more_steps_yes
+    - action: action_finish_and_guide
+
+- story: complete flood flow with human handoff
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_flood
+    - action: action_set_crisis_type
+    - slot_was_set:
+        - crisis_type: flood
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Hamburg, Altona"
+    - slot_was_set:
+        - people_count: "5"
+    - slot_was_set:
+        - vulnerability: "elderly person"
+    - slot_was_set:
+        - mobility_status: "no"
+    - slot_was_set:
+        - injury_status: "yes"
+    - active_loop: null
+    - action: action_calculate_risk_level
+    - action: utter_offer_more_steps
+    - intent: request_human
+    - action: utter_human_handover
+
+- story: complete fire flow decline guidance
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_fire
+    - action: action_set_crisis_type
+    - slot_was_set:
+        - crisis_type: fire
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Munich, city center"
+    - slot_was_set:
+        - people_count: "1"
+    - slot_was_set:
+        - vulnerability: "none"
+    - slot_was_set:
+        - mobility_status: "yes"
+    - slot_was_set:
+        - injury_status: "no"
+    - active_loop: null
+    - action: action_calculate_risk_level
+    - action: utter_offer_more_steps
+    - intent: more_steps_no
+    - action: utter_goodbye
+
+- story: complete power outage flow
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_power_outage
+    - action: action_set_crisis_type
+    - slot_was_set:
+        - crisis_type: power_outage
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Frankfurt am Main"
+    - slot_was_set:
+        - people_count: "2"
+    - slot_was_set:
+        - vulnerability: "medical needs"
+    - slot_was_set:
+        - mobility_status: "unsure"
+    - slot_was_set:
+        - injury_status: "unsure"
+    - active_loop: null
+    - action: action_calculate_risk_level
+    - action: utter_offer_more_steps
+    - intent: more_steps_yes
+    - action: action_finish_and_guide
+
+# -------------------------
+# EDGE CASE TESTING - Form Validation Failures
+# -------------------------
+
+- story: invalid location handling
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_earthquake
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - requested_slot: location
+    # Test vague location input
+    - intent: provide_location
+      entities:
+        - location: "home"
+    - action: crisis_form
+    - slot_was_set:
+        - location: null  # Should be rejected
+    # Test valid location after retry
+    - intent: provide_location
+      entities:
+        - location: "Berlin, Mitte"
+    - action: crisis_form
+    - slot_was_set:
+        - location: "Berlin, Mitte"
+
+- story: invalid people count handling
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_flood
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Hamburg"
+    - slot_was_set:
+        - requested_slot: people_count
+    # Test invalid people count
+    - intent: provide_people_count
+    - action: crisis_form
+    - slot_was_set:
+        - people_count: null  # Should be rejected
+    # Test valid count after retry
+    - intent: provide_people_count
+    - action: crisis_form
+    - slot_was_set:
+        - people_count: "4"
+
+# -------------------------
+# FALLBACK SCENARIOS TESTING
+# -------------------------
+
+- story: nlu fallback during crisis selection
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: nlu_fallback  # User types gibberish
+    - action: utter_select_crisis_type
+    - intent: report_earthquake  # User corrects themselves
+    - action: action_set_crisis_type
+
+- story: out of scope during emergency flow
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: out_of_scope  # User asks irrelevant question
+    - action: utter_out_of_scope
+    - intent: report_fire  # User gets back on track
+    - action: action_set_crisis_type
+
+- story: restart mid conversation
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_earthquake
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - intent: restart  # User wants to restart mid-form
+    - action: action_restart
+    - active_loop: null  # Form should be canceled
+
+# -------------------------
+# FORM INTERRUPTION TESTING
+# -------------------------
+
+- story: form interruption with human request
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_fire
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Cologne"
+    - intent: request_human  # User requests human mid-form
+    - action: utter_human_handoff
+    - active_loop: null  # Should exit form
+
+- story: form interruption with goodbye
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_earthquake
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - intent: goodbye  # User says goodbye mid-form
+    - action: utter_goodbye
+
+# -------------------------
+# HIGH RISK SCENARIO TESTING
+# -------------------------
+
+- story: critical risk automatic escalation
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_fire
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Stuttgart center"
+    - slot_was_set:
+        - people_count: "8"
+    - slot_was_set:
+        - vulnerability: "3 children 2 elderly"  # High vulnerability
+    - slot_was_set:
+        - mobility_status: "no"  # Cannot move
+    - slot_was_set:
+        - injury_status: "yes"  # Injuries present
+    - active_loop: null
+    - action: action_calculate_risk_level  # Should calculate CRITICAL
+    - action: utter_offer_more_steps
+    - intent: request_human  # Critical cases should escalate
+    - action: utter_human_handover
+
+# -------------------------
+# MULTI-TURN CONVERSATION TESTING
+# -------------------------
+
+- story: user changes mind about crisis type
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_earthquake
+    - action: action_set_crisis_type
+    - slot_was_set:
+        - crisis_type: earthquake
+    - intent: restart  # User realizes it's actually fire
+    - action: action_restart
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_fire
+    - action: action_set_crisis_type
+    - slot_was_set:
+        - crisis_type: fire
+
+- story: user provides mixed information
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_flood
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - location: "Leipzig downtown"
+    - slot_was_set:
+        - people_count: "6"
+    - slot_was_set:
+        - vulnerability: "pregnant woman disabled person"
+    - slot_was_set:
+        - mobility_status: "unsure"  # Mixed/unclear responses
+    - slot_was_set:
+        - injury_status: "unsure"
+    - active_loop: null
+    - action: action_calculate_risk_level
+    - action: utter_offer_more_steps
+
+# -------------------------
+# CONVERSATION COMPLETION TESTING
+# -------------------------
+
+- story: complete conversation with safety guidance
+  steps:
+    - intent: greet
+    - action: action_greet_and_restart
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_earthquake
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - active_loop: null
+    - action: action_calculate_risk_level
+    - action: utter_offer_more_steps
+    - intent: more_steps_yes
+    - action: action_finish_and_guide
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: brief interaction information only
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_power_outage
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - active_loop: null
+    - action: action_calculate_risk_level
+    - action: utter_offer_more_steps
+    - intent: more_steps_no  # User wants info only
+    - action: utter_goodbye
+
+# -------------------------
+# ERROR RECOVERY TESTING
+# -------------------------
+
+- story: recovery from multiple fallbacks
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: nlu_fallback  # First fallback
+    - action: utter_select_crisis_type
+    - intent: out_of_scope  # Second fallback
+    - action: utter_out_of_scope
+    - intent: report_earthquake  # Finally valid
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+
+- story: form validation multiple retries
+  steps:
+    - intent: emergency
+    - action: action_clear_slots
+    - action: utter_type_emergency
+    - intent: report_fire
+    - action: action_set_crisis_type
+    - action: crisis_form
+    - active_loop: crisis_form
+    - slot_was_set:
+        - requested_slot: location
+    # Multiple invalid location attempts
+    - intent: provide_location
+      entities:
+        - location: "here"  # Invalid
+    - action: crisis_form
+    - slot_was_set:
+        - location: null
+    - intent: provide_location
+      entities:
+        - location: "home"  # Still invalid
+    - action: crisis_form
+    - slot_was_set:
+        - location: null
+    - intent: provide_location
+      entities:
+        - location: "Dresden, Altstadt"  # Finally valid
+    - action: crisis_form
+    - slot_was_set:
+        - location: "Dresden, Altstadt"

@@ -1,0 +1,306 @@
+[
+  {
+    "text": "greetings",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "report_earthquake",
+      "confidence": 0.8310229778289795
+    }
+  },
+  {
+    "text": "hi emergency assistant",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "emergency",
+      "confidence": 0.49463343620300293
+    }
+  },
+  {
+    "text": "that's all thanks",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "more_steps_no",
+      "confidence": 0.7833840250968933
+    }
+  },
+  {
+    "text": "goodbye assistant",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.53749018907547
+    }
+  },
+  {
+    "text": "farewell",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.48511242866516113
+    }
+  },
+  {
+    "text": "urgent help needed",
+    "intent": "emergency",
+    "intent_prediction": {
+      "name": "more_steps_no",
+      "confidence": 0.48842304944992065
+    }
+  },
+  {
+    "text": "emergency protocol",
+    "intent": "emergency",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.4773676097393036
+    }
+  },
+  {
+    "text": "Close to Karlsruhe Palace",
+    "intent": "provide_location",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9807081818580627
+    }
+  },
+  {
+    "text": "At Mannheim Water Tower",
+    "intent": "provide_location",
+    "intent_prediction": {
+      "name": "report_flood",
+      "confidence": 0.9946188926696777
+    }
+  },
+  {
+    "text": "mobility limited",
+    "intent": "provide_mobility_status",
+    "intent_prediction": {
+      "name": "more_steps_no",
+      "confidence": 0.19731928408145905
+    }
+  },
+  {
+    "text": "wheelchair bound",
+    "intent": "provide_mobility_status",
+    "intent_prediction": {
+      "name": "provide_vulnerability",
+      "confidence": 0.9927700161933899
+    }
+  },
+  {
+    "text": "cannot move injured",
+    "intent": "provide_mobility_status",
+    "intent_prediction": {
+      "name": "provide_injury_status",
+      "confidence": 0.6920315027236938
+    }
+  },
+  {
+    "text": "mobility impaired",
+    "intent": "provide_mobility_status",
+    "intent_prediction": {
+      "name": "provide_injury_status",
+      "confidence": 0.49884894490242004
+    }
+  },
+  {
+    "text": "smoke inhalation",
+    "intent": "provide_injury_status",
+    "intent_prediction": {
+      "name": "report_fire",
+      "confidence": 0.9935674071311951
+    }
+  },
+  {
+    "text": "fracture suspected",
+    "intent": "provide_injury_status",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.21677251160144806
+    }
+  },
+  {
+    "text": "cardiac symptoms",
+    "intent": "provide_injury_status",
+    "intent_prediction": {
+      "name": "provide_mobility_status",
+      "confidence": 0.37207478284835815
+    }
+  },
+  {
+    "text": "allergic reaction",
+    "intent": "provide_injury_status",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3188730776309967
+    }
+  },
+  {
+    "text": "no more instructions",
+    "intent": "more_steps_no",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.949788510799408
+    }
+  },
+  {
+    "text": "stop the protocol",
+    "intent": "more_steps_no",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.9316373467445374
+    }
+  },
+  {
+    "text": "call fire department",
+    "intent": "request_human",
+    "intent_prediction": {
+      "name": "report_fire",
+      "confidence": 0.7621480226516724
+    }
+  },
+  {
+    "text": "human help needed",
+    "intent": "request_human",
+    "intent_prediction": {
+      "name": "more_steps_no",
+      "confidence": 0.7610309720039368
+    }
+  },
+  {
+    "text": "currency exchange rates",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "report_power_outage",
+      "confidence": 0.9049697518348694
+    }
+  },
+  {
+    "text": "sports scores today",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "emergency",
+      "confidence": 0.3721865713596344
+    }
+  },
+  {
+    "text": "asdfghjkl",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.40393614768981934
+    }
+  },
+  {
+    "text": "random gibberish",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9687041640281677
+    }
+  },
+  {
+    "text": "123456789",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "provide_people_count",
+      "confidence": 0.99886155128479
+    }
+  },
+  {
+    "text": "!!!!!!!!",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "provide_injury_status",
+      "confidence": 0.26943475008010864
+    }
+  },
+  {
+    "text": "what what what",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.484566330909729
+    }
+  },
+  {
+    "text": "huh huh huh",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "provide_injury_status",
+      "confidence": 0.7856036424636841
+    }
+  },
+  {
+    "text": "blah blah blah",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.00452065235003829
+    }
+  },
+  {
+    "text": "nonsense text here",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "provide_vulnerability",
+      "confidence": 0.49994099140167236
+    }
+  },
+  {
+    "text": "qwertyuiop",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.005288971588015556
+    }
+  },
+  {
+    "text": "????????",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "request_human",
+      "confidence": 0.007455029059201479
+    }
+  },
+  {
+    "text": "meaningless input",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "provide_injury_status",
+      "confidence": 0.2795862555503845
+    }
+  },
+  {
+    "text": "garbled text",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "provide_vulnerability",
+      "confidence": 0.5350804924964905
+    }
+  },
+  {
+    "text": "confused input",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.21100109815597534
+    }
+  },
+  {
+    "text": "unclear message",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "restart",
+      "confidence": 0.9954571723937988
+    }
+  },
+  {
+    "text": "gibberish content",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.34435153007507324
+    }
+  }
+]

@@ -1,0 +1,386 @@
+[
+  {
+    "text": "I'm in Stuttgart center",
+    "entities": [
+      {
+        "start": 7,
+        "end": 23,
+        "value": "Stuttgart center",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 7,
+        "end": 16,
+        "confidence_entity": 0.9962747097015381,
+        "value": "Stuttgart",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "I'm at Nuremberg castle",
+    "entities": [
+      {
+        "start": 7,
+        "end": 23,
+        "value": "Nuremberg castle",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 7,
+        "end": 16,
+        "confidence_entity": 0.9961154460906982,
+        "value": "Nuremberg",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Close to Karlsruhe Palace",
+    "entities": [
+      {
+        "start": 9,
+        "end": 25,
+        "value": "Karlsruhe Palace",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 19,
+        "end": 25,
+        "confidence_entity": 0.9169235229492188,
+        "value": "Palace",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "At Mannheim Water Tower",
+    "entities": [
+      {
+        "start": 3,
+        "end": 23,
+        "value": "Mannheim Water Tower",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 3,
+        "end": 11,
+        "confidence_entity": 0.7900407314300537,
+        "value": "Mannheim",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 18,
+        "end": 23,
+        "confidence_entity": 0.9723065495491028,
+        "value": "Tower",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Berlin, near Alexanderplatz",
+    "entities": [
+      {
+        "start": 0,
+        "end": 27,
+        "value": "Berlin, near Alexanderplatz",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.8105724453926086,
+        "value": "Berlin",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 13,
+        "end": 27,
+        "confidence_entity": 0.9342214465141296,
+        "value": "Alexanderplatz",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Munich, Marienplatz area",
+    "entities": [
+      {
+        "start": 0,
+        "end": 24,
+        "value": "Munich, Marienplatz area",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9133114814758301,
+        "value": "Munich",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 8,
+        "end": 19,
+        "confidence_entity": 0.9960796236991882,
+        "value": "Marienplatz",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Frankfurt am Main, downtown",
+    "entities": [
+      {
+        "start": 0,
+        "end": 27,
+        "value": "Frankfurt am Main, downtown",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9775620102882385,
+        "value": "Frankfurt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Hamburg, St. Pauli district",
+    "entities": [
+      {
+        "start": 0,
+        "end": 27,
+        "value": "Hamburg, St. Pauli district",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9687269926071167,
+        "value": "Hamburg",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 9,
+        "end": 11,
+        "confidence_entity": 0.8510002493858337,
+        "value": "St",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Cologne, near the Dom",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "Cologne, near the Dom",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9984194040298462,
+        "value": "Cologne",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 18,
+        "end": 21,
+        "confidence_entity": 0.987644374370575,
+        "value": "Dom",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Stuttgart, main train station",
+    "entities": [
+      {
+        "start": 0,
+        "end": 29,
+        "value": "Stuttgart, main train station",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9976831674575806,
+        "value": "Stuttgart",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.9471916556358337,
+        "value": "station",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Leipzig, city center",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "Leipzig, city center",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.998748779296875,
+        "value": "Leipzig",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Dresden, old town",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "Dresden, old town",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9263589382171631,
+        "value": "Dresden",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Bremen, near the market square",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "Bremen, near the market square",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9957370758056641,
+        "value": "Bremen",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Nuremberg, historic district",
+    "entities": [
+      {
+        "start": 0,
+        "end": 28,
+        "value": "Nuremberg, historic district",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9985679388046265,
+        "value": "Nuremberg",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

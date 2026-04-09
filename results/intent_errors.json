@@ -1,0 +1,106 @@
+[
+  {
+    "text": "stop now",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "more_steps_no",
+      "confidence": 0.5723499655723572
+    }
+  },
+  {
+    "text": "that’s all",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "more_steps_no",
+      "confidence": 0.8218823671340942
+    }
+  },
+  {
+    "text": "please help",
+    "intent": "emergency",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.40716567635536194
+    }
+  },
+  {
+    "text": "unsure",
+    "intent": "provide_mobility_status",
+    "intent_prediction": {
+      "name": "provide_injury_status",
+      "confidence": 0.49744611978530884
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "provide_injury_status",
+    "intent_prediction": {
+      "name": "provide_mobility_status",
+      "confidence": 0.320219486951828
+    }
+  },
+  {
+    "text": "no",
+    "intent": "provide_injury_status",
+    "intent_prediction": {
+      "name": "provide_mobility_status",
+      "confidence": 0.4079873859882355
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "more_steps_yes",
+    "intent_prediction": {
+      "name": "provide_mobility_status",
+      "confidence": 0.320219486951828
+    }
+  },
+  {
+    "text": "no",
+    "intent": "more_steps_no",
+    "intent_prediction": {
+      "name": "provide_mobility_status",
+      "confidence": 0.4079873859882355
+    }
+  },
+  {
+    "text": "asdasdasd",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.009883176535367966
+    }
+  },
+  {
+    "text": "qwertyuiop",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.005288971588015556
+    }
+  },
+  {
+    "text": "....",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.005781454034149647
+    }
+  },
+  {
+    "text": "????",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.005305708386003971
+    }
+  },
+  {
+    "text": "blah blah",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "more_steps_yes",
+      "confidence": 0.004630455281585455
+    }
+  }
+]

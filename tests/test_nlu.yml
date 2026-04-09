@@ -1,0 +1,370 @@
+version: "3.1"
+
+nlu:
+# =====================================================
+# CRISIS RESPONSE CHATBOT - COMPREHENSIVE NLU TESTS
+# For Assignment: Advanced Conversational UI Design
+# Testing: Intent Classification + Entity Extraction
+# =====================================================
+
+# -------------------------
+# BASIC INTENTS TESTING
+# -------------------------
+- intent: greet
+  examples: |
+    - hello there
+    - good morning assistant
+    - hey can you help
+    - hi bot
+    - hello crisis assistant
+    - good evening
+    - are you online
+    - hey there bot
+    - greetings
+    - hi emergency assistant
+
+- intent: goodbye
+  examples: |
+    - see you later
+    - thanks goodbye
+    - bye for now
+    - i'm done here
+    - end conversation
+    - that's all thanks
+    - goodbye assistant
+    - thanks and bye
+    - talk to you later
+    - farewell
+
+- intent: emergency
+  examples: |
+    - this is urgent
+    - i have emergency situation
+    - help me urgent
+    - emergency situation here
+    - crisis happening now
+    - urgent help needed
+    - emergency assistance
+    - i need crisis help
+    - urgent emergency
+    - emergency protocol
+
+- intent: restart
+  examples: |
+    - start over please
+    - reset this chat
+    - new conversation
+    - restart session
+    - begin again
+    - clear everything
+    - fresh start
+    - restart bot
+    - reset conversation
+    - start from beginning
+
+# -------------------------
+# CRISIS TYPE CLASSIFICATION TESTS
+# -------------------------
+- intent: report_earthquake
+  examples: |
+    - ground shaking right now
+    - earthquake happening
+    - building vibrating
+    - tremor right now
+    - seismic activity
+    - aftershock happening
+    - everything shaking
+    - earthquake emergency
+    - strong tremors
+    - quake in progress
+
+- intent: report_flood
+  examples: |
+    - water rising fast
+    - flash flooding here
+    - street underwater
+    - basement flooded
+    - flood emergency
+    - rising water levels
+    - overflowing river
+    - water everywhere
+    - flood situation
+    - drainage overflow
+
+- intent: report_fire
+  examples: |
+    - building burning
+    - smoke and flames
+    - fire emergency
+    - kitchen burning
+    - wildfire approaching
+    - smoke everywhere
+    - flames visible
+    - fire in building
+    - burning smell
+    - smoke inhalation risk
+
+- intent: report_power_outage
+  examples: |
+    - electricity out
+    - blackout situation
+    - no power anywhere
+    - power failure
+    - outage emergency
+    - lights went out
+    - electrical outage
+    - power down
+    - blackout emergency
+    - no electricity
+
+# -------------------------
+# ENTITY EXTRACTION TESTS
+# Location entities with German cities
+# -------------------------
+- intent: provide_location
+  examples: |
+    - I'm in [Berlin Mitte](location)
+    - Located at [Munich Hauptbahnhof](location)
+    - I'm near [Hamburg Altona](location)
+    - Currently at [Frankfurt Zeil](location)
+    - I'm at [Cologne Cathedral](location)
+    - Near [Dresden Frauenkirche](location)
+    - I'm in [Stuttgart center](location)
+    - At [Leipzig Hauptbahnhof](location)
+    - Close to [Bremen Marktplatz](location)
+    - I'm at [Nuremberg castle](location)
+    - Located in [Düsseldorf Altstadt](location)
+    - Near [Heidelberg University](location)
+    - I'm at [Bonn Beethovenhalle](location)
+    - Close to [Karlsruhe Palace](location)
+    - At [Mannheim Water Tower](location)
+
+# -------------------------
+# COMPLEX LOCATION TESTS
+# -------------------------
+- intent: provide_location
+  examples: |
+    - [Berlin, near Alexanderplatz](location)
+    - [Munich, Marienplatz area](location)  
+    - [Frankfurt am Main, downtown](location)
+    - [Hamburg, St. Pauli district](location)
+    - [Cologne, near the Dom](location)
+    - [Stuttgart, main train station](location)
+    - [Leipzig, city center](location)
+    - [Dresden, old town](location)
+    - [Bremen, near the market square](location)
+    - [Nuremberg, historic district](location)
+
+# -------------------------
+# PEOPLE COUNT TESTS
+# -------------------------
+- intent: provide_people_count
+  examples: |
+    - just me alone
+    - there are 2 of us
+    - family of 4 people
+    - we are 3 here
+    - about 6 people
+    - group of 8
+    - around 10 people
+    - only 1 person
+    - two people here
+    - five people total
+    - more than 7 people
+    - approximately 12 people
+    - we are 5
+    - party of 9
+    - 15 people here
+
+# -------------------------
+# VULNERABILITY ASSESSMENT TESTS
+# -------------------------
+- intent: provide_vulnerability
+  examples: |
+    - 2 children with us
+    - one elderly person here
+    - pregnant woman present
+    - baby and toddler
+    - senior citizen here
+    - disabled person with us
+    - wheelchair user here
+    - someone with asthma
+    - medical emergency person
+    - 1 child 1 elderly
+    - two kids here
+    - elderly man with us
+    - pregnant lady here
+    - baby needs help
+    - disabled child here
+
+# -------------------------
+# MOBILITY STATUS TESTS
+# -------------------------
+- intent: provide_mobility_status
+  examples: |
+    - we can move safely
+    - cannot move stuck
+    - not sure if safe
+    - able to evacuate
+    - trapped cannot leave
+    - mobility limited
+    - can walk slowly
+    - wheelchair bound
+    - cannot move injured
+    - uncertain about moving
+    - mobility impaired
+    - able to walk
+    - stuck in building
+    - can evacuate now
+    - movement restricted
+
+# -------------------------
+# INJURY STATUS TESTS
+# -------------------------
+- intent: provide_injury_status
+  examples: |
+    - someone bleeding here
+    - head injury reported
+    - broken leg suspected
+    - chest pain symptoms
+    - breathing difficulty
+    - unconscious person
+    - minor cuts only
+    - no visible injuries
+    - possible internal injury
+    - severe bleeding
+    - burn injuries
+    - smoke inhalation
+    - fracture suspected
+    - cardiac symptoms
+    - allergic reaction
+
+# -------------------------
+# NEXT STEPS TESTS
+# -------------------------
+- intent: more_steps_yes
+  examples: |
+    - show me safety steps
+    - give me the protocol
+    - continue with guidance
+    - tell me what to do
+    - provide instructions
+    - keep the guide going
+    - show detailed steps
+    - continue safety protocol
+    - give me more guidance
+    - proceed with instructions
+
+- intent: more_steps_no
+  examples: |
+    - that's sufficient
+    - no more instructions
+    - end guidance now
+    - stop the protocol
+    - enough information
+    - don't continue
+    - no further steps
+    - information only
+    - that's all needed
+    - stop instructions
+
+# -------------------------
+# HUMAN HANDOFF TESTS
+# -------------------------
+- intent: request_human
+  examples: |
+    - connect emergency services
+    - call 112 for me
+    - need real operator
+    - dispatch emergency help
+    - connect to human
+    - send ambulance now
+    - call fire department
+    - need police assistance
+    - emergency operator now
+    - human help needed
+    - connect me urgently
+    - dispatch rescue team
+    - call paramedics
+    - need fire brigade
+    - emergency dispatch
+
+# -------------------------
+# OUT OF SCOPE TESTS
+# -------------------------
+- intent: out_of_scope
+  examples: |
+    - what's the weather like
+    - tell me a funny joke
+    - what time is it
+    - who is the president
+    - recommend a restaurant
+    - help with homework
+    - explain quantum physics
+    - investment advice needed
+    - translate this text
+    - book a hotel
+    - play some music
+    - generate an image
+    - write a poem
+    - currency exchange rates
+    - sports scores today
+
+# -------------------------
+# FALLBACK TESTS
+# -------------------------
+- intent: nlu_fallback
+  examples: |
+    - asdfghjkl
+    - random gibberish
+    - 123456789
+    - !!!!!!!!
+    - what what what
+    - huh huh huh
+    - blah blah blah
+    - nonsense text here
+    - qwertyuiop
+    - ????????
+    - meaningless input
+    - garbled text
+    - confused input
+    - unclear message
+    - gibberish content
+
+# -------------------------
+# EDGE CASE SCENARIOS
+# -------------------------
+- intent: report_earthquake
+  examples: |
+    - think it might be earthquake
+    - possible seismic event
+    - ground moving slightly
+    - building creaking earthquake
+    - mild shaking felt
+
+- intent: report_flood
+  examples: |
+    - water level rising slowly
+    - potential flood risk
+    - drainage backing up
+    - basement getting wet
+    - flood warning area
+
+- intent: provide_location
+  examples: |
+    - somewhere in [Berlin](location)
+    - around [Munich](location) area
+    - [Frankfurt](location) vicinity
+    - near [Hamburg](location)
+    - [Cologne](location) region
+
+# -------------------------
+# MIXED SCENARIO TESTS
+# -------------------------
+- intent: provide_vulnerability
+  examples: |
+    - 2 children 1 elderly medical needs
+    - pregnant woman with asthma
+    - disabled child wheelchair
+    - elderly diabetic person
+    - baby with breathing problems
